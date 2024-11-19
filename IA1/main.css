@@ -1,0 +1,53 @@
+[aria-hidden="true"] {
+    display: none;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    font-size: 3em;
+    text-align: center;
+    background-color: lightblue;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+main {
+    margin: 8px;
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    justify-content: center;
+}
+
+.flex-container img {
+    min-width: 0px;
+}
+
+.flex-container>p,
+.flex-container>div {
+    flex: 1 10 30em;
+}
+
+label {
+    user-select: none;
+}
