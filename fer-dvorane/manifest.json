@@ -7,7 +7,7 @@
             "type": "image/png"
         }
     ],
-    "start-url": "/fer-dvorane",
+    "start_url": "/fer-dvorane",
     "display": "standalone",
     "protocol_handlers": [
         {
