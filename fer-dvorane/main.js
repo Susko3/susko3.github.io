@@ -30,13 +30,39 @@ function get_room() {
     return get_room_from_geo_protocol_handler(params);
 }
 
+const martinovka_ground_floor_rooms = ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M-LAB1"]
+const martinovka_first_floor_rooms = ["M-LAB2", "M-LAB3"]
+
+const martinovka_ground_floor_document = "document/martinovka-prizemlje.pdf"
+const martinovka_first_floor_document = "document/martinovka-prvi-kat.pdf"
+
+/**
+ * @param {string} room
+ */
+function try_get_martinovka_document(room) {
+    room = room.toUpperCase()
+
+    if (martinovka_ground_floor_rooms.includes(room)) {
+        return martinovka_ground_floor_document;
+    } else if (martinovka_first_floor_rooms.includes(room)) {
+        return martinovka_first_floor_document;
+    } else {
+        return null;
+    }
+}
+
 function redirect_if_needed() {
     const room = get_room();
 
     if (room !== null) {
-        const newUrl = new URL("https://www.fer.unizg.hr/lib/lokacija/2/info.php");
-        newUrl.searchParams.set("soba", room);
-        window.location.replace(newUrl);
+        const m_doc = try_get_martinovka_document(room);
+        if (m_doc !== null) {
+            window.location.replace(m_doc);
+        } else {
+            const newUrl = new URL("https://www.fer.unizg.hr/lib/lokacija/2/info.php");
+            newUrl.searchParams.set("soba", room);
+            window.location.replace(newUrl);
+        }
     }
 }
 
