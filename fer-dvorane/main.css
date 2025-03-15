@@ -1,3 +1,16 @@
 :root {
     color-scheme: light dark;
 }
+
+.column-container {
+    column-width: 42ch;
+}
+
+.break-stopper {
+    break-inside: avoid;
+}
+
+/* Hack: supress margin */
+h2 + .column-container :first-child h3 {
+    margin-block-start: 0;
+}
