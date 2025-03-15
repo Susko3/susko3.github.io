@@ -30,8 +30,8 @@ function get_room() {
     return get_room_from_geo_protocol_handler(params);
 }
 
-const martinovka_ground_floor_rooms = ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M-LAB1"]
-const martinovka_first_floor_rooms = ["M-LAB2", "M-LAB3"]
+const martinovka_ground_floor_rooms = ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M-LAB1", "MLAB1"]
+const martinovka_first_floor_rooms = ["M-LAB2", "MLAB2", "M-LAB3", "MLAB3"]
 
 const martinovka_ground_floor_document = "document/martinovka-prizemlje.pdf"
 const martinovka_first_floor_document = "document/martinovka-prvi-kat.pdf"
